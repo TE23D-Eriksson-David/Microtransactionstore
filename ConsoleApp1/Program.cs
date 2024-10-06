@@ -45,9 +45,29 @@ Cuantity();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void Items(){
     j=0;
     Convertsucsses = false;
+    //Cost = 0;
 // tab 7 text
     
 
@@ -77,7 +97,7 @@ if (Convertsucsses == false && j > 0) {
     SC.WriteLine(@"
                                                 Wrong item index, try again");
 } 
-
+Cost = 0;
      item = SC.ReadLine();
 Convertsucsses = int.TryParse(item, out itemNum); // försöker parsa om mislykas går vidare med 0
 validAnswer = choices.Contains(item);
@@ -90,6 +110,29 @@ SC.Clear();
 } // while Convertsucsses == false
 
 } // Item
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -119,6 +162,13 @@ if (stockSugar == 0 && itemNum == 3){
 itemNum = 0;
 i = 0;
 }
+
+
+
+
+
+
+
 
 if (itemNum == 1){
 SC.WriteLine(@$"
@@ -164,6 +214,15 @@ Money = Money-Cost;
 
 
 
+
+
+
+
+
+
+
+
+
 else if (itemNum == 2){
 
 SC.WriteLine(@$"
@@ -181,7 +240,7 @@ if (intCuantety > stockMonkey){
 SC.WriteLine(@"            
             We unfortunelty dont have the recuiered inventory for your transaction plese chose a lower amount");
 }
-if (Convertsucsses == true && Money < Cost) {
+if (Convertsucsses == true && Money < Cost || Money < 36.99f) {
 SC.WriteLine(@"            
             You unfortunetly do not have the requierd funds for the transaction, please aquier aditenal funds");
             unafordeble = true;
@@ -208,7 +267,25 @@ Money = Money-Cost;
 
 
 } // if (unafordeble = false)
+
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 else if (itemNum == 3){
@@ -228,18 +305,21 @@ if (intCuantety > stockSugar){
 SC.WriteLine(@"            
             We unfortunelty dont have the recuiered inventory for your transaction plese chose a lower amount");
 }
-if (Convertsucsses == true && Money < Cost) {
+if (Convertsucsses == true && Money < Cost || Money < 69.69f) {
 SC.WriteLine(@"            
             You unfortunetly do not have the requierd funds for the transaction, please aquier aditenal funds");
+            unafordeble = true;
+            i = 0;
+            SC.ReadLine();
 } 
 
-
+if (unafordeble == false){
 strCuantety = SC.ReadLine();
 Cost = 0;
 
 Convertsucsses = int.TryParse(strCuantety, out intCuantety); // försöker parsa om mislykas går vidare med 0
 
-Cost = 17.45f * intCuantety; 
+Cost = 69.69f * intCuantety; 
 if (Convertsucsses == true && Money > Cost  && intCuantety <= stockSugar) {
 SC.WriteLine($@"
                                               You have now baugt {intCuantety} bags of Sugar.");
@@ -250,7 +330,24 @@ i = 0;
 Money = Money-Cost;
 }
 
+
+} // if (unafordeble = false)
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -264,21 +361,16 @@ SC.Clear();
 } // while (i == 1)
 //if (unafordeble = false){
 Baugt++;
+unafordeble = false;
 //}
 
     if (Money < 17.5){
 SC.WriteLine("Your Unfortunatly broke, =/ .Therefore we dont want you here anymore.");
+SC.WriteLine(@$"You have bought  :{Cheese}:Cheese     :{Monkeys}:Monkeys      :{Sugar}:bags of Sugar");
 SC.ReadLine();
 Running = false;
-}
-
-} // Cuantety
-
-
-
 while(true){
     SC.Clear();
-    SC.ReadLine();
     SC.WriteLine(@"
 
     
@@ -286,4 +378,12 @@ while(true){
     
     
     ");
+SC.ReadLine();
 }
+}
+
+} // Cuantety
+
+
+
+
