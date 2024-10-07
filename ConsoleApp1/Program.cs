@@ -2,28 +2,36 @@
 
 
 
-float Money = 100;
 bool Running = true;
 bool INput = true;
-string itemId;
-string[] choices = ["1", "2", "3"];
 bool Convertsucsses = false;
-int itemNum =0;
 bool validAnswer;
+bool Unafordeble = false;
+
 int stockCheese= 2;
 int stockMonkey = 3;
 int stockSugar = 1;
-int j=0;
-string item;
+int j = 0;
 int i;
-string strCuantety;
+int itemNum =0;
 int intCuantety =0;
-float Cost =0;
-int  Baugt = 0;
+int Baugt = 0;
 int Cheese =0;
 int Monkeys =0;
 int Sugar =0;
-bool unafordeble = false;
+
+float Cost =0;
+float Money = 100;
+
+string strCuantety;
+string Item;
+string itemId;
+string[] Choices = ["1", "2", "3"];
+
+
+
+
+
 
 SC.WriteLine(@$"
                             This is the store! Here you can spend your money on stupid things, 
@@ -33,18 +41,10 @@ while(Running){
 Store();
 }
 
-
 void Store(){
 Items();
 Cuantity();
 }
-
-
-
-
-
-
-
 
 
 
@@ -98,9 +98,9 @@ if (Convertsucsses == false && j > 0) {
                                                 Wrong item index, try again");
 } 
 Cost = 0;
-     item = SC.ReadLine();
-Convertsucsses = int.TryParse(item, out itemNum); // försöker parsa om mislykas går vidare med 0
-validAnswer = choices.Contains(item);
+     Item = SC.ReadLine();
+Convertsucsses = int.TryParse(Item, out itemNum); // försöker parsa om mislykas går vidare med 0
+validAnswer = Choices.Contains(Item);
 if (validAnswer == false ) { Convertsucsses = false; }
 
 j++;
@@ -110,13 +110,6 @@ SC.Clear();
 } // while Convertsucsses == false
 
 } // Item
-
-
-
-
-
-
-
 
 
 
@@ -162,6 +155,13 @@ if (stockSugar == 0 && itemNum == 3){
 itemNum = 0;
 i = 0;
 }
+
+
+
+
+
+
+
 
 
 
@@ -243,12 +243,12 @@ SC.WriteLine(@"
 if (Convertsucsses == true && Money < Cost || Money < 36.99f) {
 SC.WriteLine(@"            
             You unfortunetly do not have the requierd funds for the transaction, please aquier aditenal funds");
-            unafordeble = true;
+            Unafordeble = true;
             i = 0;
             SC.ReadLine();
 } 
 
-if (unafordeble == false){
+if (Unafordeble == false){
 strCuantety = SC.ReadLine();
 Cost = 0;
 
@@ -266,7 +266,7 @@ Money = Money-Cost;
 }
 
 
-} // if (unafordeble = false)
+} // if (Unafordeble = false)
 
 } 
 
@@ -308,12 +308,12 @@ SC.WriteLine(@"
 if (Convertsucsses == true && Money < Cost || Money < 69.69f) {
 SC.WriteLine(@"            
             You unfortunetly do not have the requierd funds for the transaction, please aquier aditenal funds");
-            unafordeble = true;
+            Unafordeble = true;
             i = 0;
             SC.ReadLine();
 } 
 
-if (unafordeble == false){
+if (Unafordeble == false){
 strCuantety = SC.ReadLine();
 Cost = 0;
 
@@ -331,7 +331,7 @@ Money = Money-Cost;
 }
 
 
-} // if (unafordeble = false)
+} // if (Unafordeble = false)
 
 
 }
@@ -359,12 +359,12 @@ j++;
 SC.Clear();
 
 } // while (i == 1)
-//if (unafordeble = false){
+//if (Unafordeble = false){
 Baugt++;
-unafordeble = false;
+Unafordeble = false;
 //}
 
-    if (Money < 17.5){
+    if (Money < 17.45f){
 SC.WriteLine("Your Unfortunatly broke, =/ .Therefore we dont want you here anymore.");
 SC.WriteLine(@$"You have bought  :{Cheese}:Cheese     :{Monkeys}:Monkeys      :{Sugar}:bags of Sugar");
 SC.ReadLine();
@@ -372,18 +372,28 @@ Running = false;
 while(true){
     SC.Clear();
     SC.WriteLine(@"
+                                          ______________
+                                        |\ ___________ /|
+                                        | |  /|,| |   | |
+      .-'\                              | | |,x,| |   | |     
+   .-'  `/\                             | | |,x,' |   | |
+.-'      `/\                            | | |/    |   | |
+\         `/\                           | |    /] ,   | |
+ \         `/\                          | |   [/ ()   | |
+  \    _-   `/\       _.--.             | |       |   | |
+   \    _-   `/`-..--\     )            | |       |   | |
+    \    _-   `,','  /    ,')           | |       |   | |
+     `-_   -   ` -- ~   ,','            | |      ,'   | |
+      `-              ,','              | |   ,'      | |
+       \,--.    ____==-~                |_|,'_________|_| 
+        \   \_-~\                      
+         `_-~_.-'                      
+          \-~                          
+                                      
 
-    
-    bot
-    
-    
     ");
 SC.ReadLine();
 }
 }
 
 } // Cuantety
-
-
-
-
