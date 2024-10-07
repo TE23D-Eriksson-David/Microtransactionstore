@@ -90,7 +90,7 @@ void Items()
                                 | |_   |_|  _| |     | |_  |____|  _| |     | |_  |____/   _| |
                                 |___|      |___|     |___|        |___|     |___|         |___|
                                      Cheese                Monkey                  Sugar                                                          
-                                  Kost: 17.45kr          Kost: 36.99kr         Kost: 69.69kr
+                                  Kost: 17.45kr         Kost: 36.99kr          Kost: 69.69kr
 
 
                         If You want to buy an item, type the number for said item and then press Enther.
