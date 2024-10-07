@@ -185,7 +185,7 @@ void Cuantity()
             SC.WriteLine(@$"
                               How many Chesses do you want to buy? They cost: 17.45 kr ech.
                                                   We have {stockCheese} in stock.
-                    If you want to exit the buiyng, write Escape, otherwise write how many you want:
+                    If you want to exit the buiyng, write Back, otherwise write how many you want:
 ");
 
             if (Convertsucsses == false && j > 0)
@@ -209,7 +209,7 @@ void Cuantity()
             strCuantety = SC.ReadLine();
             Cost = 0;
 
-            if(strCuantety.ToLower() == "escape"){
+            if(strCuantety.ToLower() == "back"){
                 i = 0;
             }
 
@@ -248,7 +248,7 @@ void Cuantity()
             SC.WriteLine(@$"
                               How many Monkeys do you want to buy? They cost: 36.99 kr ech.
                                                   We have {stockMonkey} in stock.
-                        If you want to exit the buiyng, write Escape, otherwise write how many you want:
+                        If you want to exit the buiyng, write Back, otherwise write how many you want:
 ");
 
             if (Convertsucsses == false && j > 0)
@@ -276,7 +276,7 @@ void Cuantity()
                 strCuantety = SC.ReadLine();
                 Cost = 0;
 
-                if(strCuantety.ToLower() == "escape"){
+                if(strCuantety.ToLower() == "back"){
                 i = 0;
             }
 
@@ -323,7 +323,7 @@ void Cuantity()
             SC.WriteLine(@$"
                               How mutch Sugar do you want to buy? They cost: 69.69 kr per bag.
                                                   We have {stockSugar} in stock.
-                        If you want to exit the buiyng, write Escape, otherwise write how many you want:
+                        If you want to exit the buiyng, write Back, otherwise write how many you want:
 ");
 
             if (Convertsucsses == false && j > 0)
@@ -351,7 +351,7 @@ void Cuantity()
                 strCuantety = SC.ReadLine();
                 Cost = 0;
 
-                if(strCuantety.ToLower() == "escape"){
+                if(strCuantety.ToLower() == "back"){
                 i = 0;
             }
 
